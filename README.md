@@ -1,17 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
 ## Table of Contents
 
-- [Updating to New Releases](#updating-to-new-releases)
-- [Sending Feedback](#sending-feedback)
-- [Folder Structure](#folder-structure)
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
-  - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
+  - [npm run lint](#npm-run-lint)
+  - [npm run tsc](#npm-run-tsc)
+  - [npm run tsc:watch](#npm-run-tsc:watch)
+  - [npm run pretest](#npm-run-pretest)
+  - [npm test](#npm-test)
 - [Supported Language Features and Polyfills](#supported-language-features-and-polyfills)
 - [Syntax Highlighting in the Editor](#syntax-highlighting-in-the-editor)
 - [Displaying Lint Output in the Editor](#displaying-lint-output-in-the-editor)
@@ -32,7 +28,6 @@ You can find the most recent version of this guide [here](https://github.com/fac
 - [Using Global Variables](#using-global-variables)
 - [Adding Bootstrap](#adding-bootstrap)
   - [Using a Custom Theme](#using-a-custom-theme)
-- [Adding Flow](#adding-flow)
 - [Adding Custom Environment Variables](#adding-custom-environment-variables)
   - [Referencing Environment Variables in the HTML](#referencing-environment-variables-in-the-html)
   - [Adding Temporary Environment Variables In Your Shell](#adding-temporary-environment-variables-in-your-shell)
@@ -92,65 +87,6 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [`npm run build` fails on Heroku](#npm-run-build-fails-on-heroku)
   - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
   - [Moment.js locales are missing](#momentjs-locales-are-missing)
-- [Something Missing?](#something-missing)
-
-## Updating to New Releases
-
-Create React App is divided into two packages:
-
-* `create-react-app` is a global command-line utility that you use to create new projects.
-* `react-scripts` is a development dependency in the generated projects (including this one).
-
-You almost never need to update `create-react-app` itself: it delegates all the setup to `react-scripts`.
-
-When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
-
-To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
-
-In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
-
-We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
-
-## Sending Feedback
-
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
-
-## Folder Structure
-
-After creation, your project should look like this:
-
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
-```
-
-For the project to build, **these files must exist with exact filenames**:
-
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
-
-You can delete or rename the other files.
-
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
-
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
-
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
 
 ## Available Scripts
 
@@ -178,6 +114,22 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](#deployment) for more information.
+
+### `npm run lint`
+
+Runs ts lint on typescript files within `src`.
+
+### `npm run tsc`
+
+Runs ts compiler on typescript files within `src` but without emitting outputs.
+
+### `npm run tsc:watch`
+
+Runs ts compiler in watch mode.
+
+### `npm run pretest`
+
+Runs both ts lint and ts compiler.
 
 ## Supported Language Features and Polyfills
 
@@ -785,25 +737,6 @@ We suggest the following approach:
 * Install your own theme npm package as a dependency of your app.
 
 Here is an example of adding a [customized Bootstrap](https://medium.com/@tacomanator/customizing-create-react-app-aa9ffb88165) that follows these steps.
-
-## Adding Flow
-
-Flow is a static type checker that helps you write code with fewer bugs. Check out this [introduction to using static types in JavaScript](https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-1-8382da1e0adb) if you are new to this concept.
-
-Recent versions of [Flow](http://flowtype.org/) work with Create React App projects out of the box.
-
-To add Flow to a Create React App project, follow these steps:
-
-1. Run `npm install --save flow-bin` (or `yarn add flow-bin`).
-2. Add `"flow": "flow"` to the `scripts` section of your `package.json`.
-3. Run `npm run flow init` (or `yarn flow init`) to create a [`.flowconfig` file](https://flowtype.org/docs/advanced-configuration.html) in the root directory.
-4. Add `// @flow` to any files you want to type check (for example, to `src/App.js`).
-
-Now you can run `npm run flow` (or `yarn flow`) to check the files for type errors.
-You can optionally use an IDE like [Nuclide](https://nuclide.io/docs/languages/flow/) for a better integrated experience.
-In the future we plan to integrate it into Create React App even more closely.
-
-To learn more about Flow, check out [its documentation](https://flowtype.org/).
 
 ## Adding Custom Environment Variables
 
@@ -2170,7 +2103,3 @@ To resolve this:
 1. Open an issue on the dependency's issue tracker and ask that the package be published pre-compiled (retaining ES6 Modules).
 2. Fork the package and publish a corrected version yourself.
 3. If the dependency is small enough, copy it to your `src/` folder and treat it as application code.
-
-## Something Missing?
-
-If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
