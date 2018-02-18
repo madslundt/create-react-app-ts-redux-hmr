@@ -5,7 +5,7 @@
   - [npm run build](#npm-run-build)
   - [npm run lint](#npm-run-lint)
   - [npm run tsc](#npm-run-tsc)
-  - [npm run tsc:watch](#npm-run-tsc:watch)
+  - [npm run tsc:watch](#npm-run-tscwatch)
   - [npm run pretest](#npm-run-pretest)
   - [npm test](#npm-test)
 - [Supported Language Features and Polyfills](#supported-language-features-and-polyfills)
