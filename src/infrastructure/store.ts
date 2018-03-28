@@ -2,7 +2,7 @@ import { Store, createStore, applyMiddleware, Middleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import rootReducer from '@infrastructure/rootReducer';
-import { initialState as mailboxInitialState } from '@Components/Mailbox/mailboxReducer';
+import { initialState as mailContainerInitialState } from '@Components/MailContainer/mailContainerReducer';
 
 const customLoggerMiddleware: Middleware = state => next => (action: any) => {
     console.log(1, state);
@@ -11,7 +11,7 @@ const customLoggerMiddleware: Middleware = state => next => (action: any) => {
 };
 
 const initialState: any = {
-    Mailbox: mailboxInitialState,
+    MailContainer: mailContainerInitialState,
 };
 
 const configureStore = (): Store<any> => {

@@ -1,7 +1,7 @@
-import Mailbox from './Mailbox/mailboxContainer';
+import MailContainer from './MailContainer/mailContainer';
 import Counter from './Counter/counterPage';
 
 export {
-    Mailbox,
+    MailContainer,
     Counter,
 };

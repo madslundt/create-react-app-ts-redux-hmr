@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import Mailbox from '@Components/Mailbox/mailboxReducer';
+import MailContainer from '@Components/MailContainer/mailContainerReducer';
 
 interface IReducer {
-    readonly Mailbox: typeof Mailbox;
+    readonly MailContainer: typeof MailContainer;
 }
 
 const rootReducer = combineReducers({
-    Mailbox
+    MailContainer
 });
 
 export default rootReducer;
