@@ -17,7 +17,6 @@ const initialState: IAction<IMail[]> = {
 
 export default handleActions<IAction<IMail[]>, IMail[]>({
     [FETCH_MAILS_REQUEST]: (state: IAction<IMail[]>, action: Action<IMail[]>): IAction<IMail[]> => {
-        console.log(state);
         return {
             ...state,
             meta: {

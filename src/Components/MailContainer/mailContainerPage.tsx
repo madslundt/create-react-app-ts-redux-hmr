@@ -39,10 +39,14 @@ class MailContainerPage extends React.Component<IProps, any> {
     }
 
     render() {
-        const { payload } = this.props.mailContainer;
+        const { payload, meta } = this.props.mailContainer;
         const { page, currentMail } = this.state;
 
         const pageLength = Math.ceil(payload.length / PAGE_SIZE);
+
+        if (meta.isFetching) {
+            return <div>Loading</div>;
+        }
 
         return (
             <div>
@@ -53,7 +57,7 @@ class MailContainerPage extends React.Component<IProps, any> {
                         <li
                             onClick={() => this.viewMail(mail)}
                             key={mail.id}
-                            style={{cursor: 'pointer'}}
+                            style={{cursor: 'pointer', fontWeight: currentMail === mail ? 700 : 300}}
                         >
                             <MailItem {...mail} />
                         </li>

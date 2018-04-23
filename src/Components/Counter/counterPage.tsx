@@ -10,7 +10,7 @@ class CounterPage extends React.Component<IProps, any> {
         super(props);
 
         this.state = {
-            count: 5
+            count: 0
         };
 
         this.increment = this.increment.bind(this);
