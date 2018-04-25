@@ -33,9 +33,15 @@ class MailContainerPage extends React.Component<IProps, any> {
     }
 
     viewMail(mail: IMail) {
-        this.setState({
-            currentMail: mail
-        });
+        if (this.state.currentMail === mail) {
+            this.setState({
+                currentMail: null
+            });
+        } else {
+            this.setState({
+                currentMail: mail
+            });
+        }
     }
 
     render() {
@@ -64,7 +70,7 @@ class MailContainerPage extends React.Component<IProps, any> {
                     ))}
                 </ul>
 
-                <MailViewer {...currentMail} />
+                {currentMail && <MailViewer {...currentMail} />}
 
                 <PageControl
                     currentPage={page}
