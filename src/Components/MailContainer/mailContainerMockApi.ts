@@ -7,6 +7,11 @@ for (let i = 100; i > 0; i--) {
     fetchMailsData.push({
         id: `${i}`,
         title: `Mail item ${i}`,
+        description: `
+            Dolor ad nulla sunt elit tempor Lorem exercitation ex ut laboris cupidatat do.
+            Consectetur non irure labore eiusmod reprehenderit.
+            Eu non nulla aliquip laborum duis deserunt minim.
+        `
     });
 }
 

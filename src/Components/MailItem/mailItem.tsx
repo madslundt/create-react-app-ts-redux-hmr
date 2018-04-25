@@ -3,6 +3,7 @@ import * as React from 'react';
 interface IMail {
     id: string;
     title: string;
+    description: string;
 }
 
 const MailItem = (props: IMail) => (
